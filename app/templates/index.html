@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swiss Knife Py | Modern Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="main-container shadow-lg">
+        <header>
+            <h1><i class="fas fa-magic"></i>Swiss Knife Py</h1>
+            <span class="version">v1.2.0-Alpha</span>
+        </header>
+
+        <div class="row g-0">
+            <div class="col-md-4 tool-area">
+                <div class="tool-list-group shadow-sm" id="tool-selector">
+                    <button class="tool-item active" data-type="extract_img">
+                        <i class="fas fa-file-image me-2"></i>图片提取 (PDF/Word)
+                    </button>
+                    <button class="tool-item" data-type="table_conv">
+                        <i class="fas fa-table me-2"></i>表格转换 (PDF/CSV)
+                    </button>
+                    <button class="tool-item" data-type="watermark">
+                        <i class="fas fa-stamp me-2"></i>批量水印
+                    </button>
+                </div>
+
+                <div class="settings-area">
+                    <div class="settings-title">SETTINGS</div>
+                    <div id="param-fields">
+                        <div id="field-watermark" class="d-none">
+                            <label class="form-label small text-muted">水印文字内容</label>
+                            <input type="text" id="wm-text" class="form-control form-control-sm input-sm" value="INTERNAL USE">
+                        </div>
+                        <div id="field-extract_img">
+                            <p class="text-muted small">自动提取文档内所有高分辨率原图并打包</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 upload-area">
+                <div id="drop-zone" class="p-5 text-center bg-white h-100 d-flex flex-column justify-content-center">
+                    <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+                    <p>拖拽文件到此处</p>
+                    <span>或点击浏览文件</span>
+                    <input type="file" id="file-input" hidden>
+                    <div id="progress-container" class="mt-4 d-none">
+                        <div class="progress progress-sm"><div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%"></div></div>
+                        <p id="status-text" class="mt-2 small text-muted font-monospace">准备就绪</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/upload.js"></script>
+</body>
+</html>
